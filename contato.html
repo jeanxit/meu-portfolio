@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contato | Jean Correa</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+  <nav>
+  <div class="logo">Jean Correa</div>
+  <button id="nav-toggle" aria-label="Abrir menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+   <ul id="nav-menu">
+    <li><a href="index.html">Sobre</a></li>
+    <li><a href="projetos.html">Projetos</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="certificados.html">Certificados</a></li>
+    <li><a href="contato.html" class="active">Contato</a></li>
+  </ul>
+</nav>
+    <section class="contato-section">
+      <h2>Contato</h2>
+      <div class="contato-text">
+        Vamos conversar! Me envie um e-mail ou acesse meus perfis profissionais:
+      </div>
+      <div class="contact-cards">
+        <div class="contact-card">
+          <!-- Email SVG -->
+          <svg viewBox="0 0 24 24" fill="none"><path d="M2 7.5A3.5 3.5 0 0 1 5.5 4h13A3.5 3.5 0 0 1 22 7.5v9A3.5 3.5 0 0 1 18.5 20h-13A3.5 3.5 0 0 1 2 16.5v-9Z" stroke="#fff" stroke-width="1.4"/><path d="M4.9 6.2 12 12.4l7.1-6.2" stroke="#24b9ff" stroke-width="1.4" stroke-linecap="round"/></svg>
+          <div class="contact-label">E-mail</div>
+          <a class="contact-link" href="mailto:jeancorreadasilva633@gmail.com">jean.valdan.2007@gmail.com</a>
+        </div>
+        <div class="contact-card">
+          <!-- LinkedIn SVG -->
+          <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="4" stroke="#fff" stroke-width="1.4"/><path d="M8.1 10.7v4.3m0-4.3V8.5m0 6.5v.1M12.1 15V12c0-1.5 2.2-1.6 2.2 0v3" stroke="#24b9ff" stroke-width="1.4" stroke-linecap="round"/></svg>
+          <div class="contact-label">LinkedIn</div>
+          <a class="contact-link" href="https://www.linkedin.com/in/seu-link" target="_blank">/in/seu-link</a>
+        </div>
+        <div class="contact-card">
+          <!-- GitHub SVG -->
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12.3 2C6.6 2 2 6.7 2 12.3c0 4.5 2.9 8.4 6.9 9.7.5.1.6-.2.6-.5v-2c-2.8.6-3.3-1.3-3.3-1.3-.4-1.1-.9-1.4-.9-1.4-.8-.5.1-.5.1-.5.9.1 1.4.9 1.4.9.8 1.4 2.1 1 2.7.7.1-.6.3-1 .5-1.3-2.2-.3-4.6-1.1-4.6-4.7 0-1 .3-1.8.9-2.5-.1-.2-.4-1.2.1-2.4 0 0 .8-.3 2.5 1 .7-.2 1.5-.4 2.3-.4s1.6.1 2.3.4c1.7-1.3 2.5-1 2.5-1 .5 1.2.2 2.2.1 2.4.6.7.9 1.5.9 2.5 0 3.6-2.4 4.4-4.6 4.7.3.3.5.7.5 1.3v1.9c0 .3.2.7.7.6 4-1.3 6.9-5.2 6.9-9.7C22.7 6.7 18.1 2 12.3 2Z" stroke="#fff" stroke-width="1.4"/></svg>
+          <div class="contact-label">GitHub</div>
+          <a class="contact-link" href="https://github.com/seuusuario" target="_blank">github.com/seuusuario</a>
+        </div>
+      </div>
+      <div style="font-size: .98rem; color: #7de6fc; margin-top: 1.6rem;">Retorno rápido garantido 🚀</div>
+    </section>
+    <footer>
+      <p>© 2025 Jean Correa • Portfólio Profissional</p>
+    </footer>
+  </div>
+  <script>
+const toggle = document.getElementById('nav-toggle');
+const menu = document.getElementById('nav-menu');
+const overlay = document.getElementById('nav-overlay');
+
+toggle.addEventListener('click', () => {
+  toggle.classList.toggle('active');
+  menu.classList.toggle('show');
+  overlay.classList.toggle('active');
+});
+
+// Fecha menu se clicar no overlay
+overlay.addEventListener('click', () => {
+  toggle.classList.remove('active');
+  menu.classList.remove('show');
+  overlay.classList.remove('active');
+});
+
+// Fecha ao clicar em um link
+menu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    toggle.classList.remove('active');
+    menu.classList.remove('show');
+    overlay.classList.remove('active');
+  });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jean Correa | Portfólio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet" />
+
+</head>
+<body>
+  <div class="container">
+ <nav>
+  <div class="logo">Jean Correa</div>
+  <button id="nav-toggle" aria-label="Abrir menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <ul id="nav-menu">
+    <li><a href="index.html" class="active">Sobre</a></li>
+    <li><a href="projetos.html">Projetos</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="certificados.html">Certificados</a></li>
+    <li><a href="contato.html">Contato</a></li>
+  </ul>
+</nav>
+
+    <header class="hero">
+      <h1>Olá, sou <span>Jean Correa</span></h1>
+      <p>Desenvolvedor Backend | Supabase • PostgreSQL • APIs REST • PM2</p>
+    </header>
+   <section class="sobre">
+  <h2>Sobre Mim</h2>
+  <ul class="sobre-bullets">
+    <li>Graduando em <strong>Engenharia de Software</strong>, sempre focado em ampliar minha visão técnica e estratégica para o desenvolvimento de sistemas.</li>
+    <li>Mais de <strong>1 ano e 8 meses de experiência</strong> prática em desenvolvimento, atuando como aprendiz em ambientes reais.</li>
+    <li><strong>138+ horas de formação Alura</strong> em tecnologias-chave como HTML, CSS, JavaScript, Python, bancos de dados e integração de sistemas.</li>
+    <li>Especializado em <strong>backend</strong>, automação de processos, criação de APIs REST e integração de sistemas com foco em robustez, performance e escalabilidade.</li>
+    <li>Princípios de <strong>código limpo</strong>, arquitetura segura e colaboração. Busco ambientes que incentivam inovação, autonomia e soluções que impactam de verdade.</li>
+  </ul>
+</section>
+    <footer>
+      <p>© 2025 Jean Correa • Portfólio Profissional</p>
+    </footer>
+  </div>
+  <script>
+const toggle = document.getElementById('nav-toggle');
+const menu = document.getElementById('nav-menu');
+const overlay = document.getElementById('nav-overlay');
+
+toggle.addEventListener('click', () => {
+  toggle.classList.toggle('active');
+  menu.classList.toggle('show');
+  overlay.classList.toggle('active');
+});
+
+// Fecha menu se clicar no overlay
+overlay.addEventListener('click', () => {
+  toggle.classList.remove('active');
+  menu.classList.remove('show');
+  overlay.classList.remove('active');
+});
+
+// Fecha ao clicar em um link
+menu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    toggle.classList.remove('active');
+    menu.classList.remove('show');
+    overlay.classList.remove('active');
+  });
+});
+
+</script>
+
+</body>
+</html>
