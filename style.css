@@ -48,6 +48,13 @@ body {
   }
 }
 
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Garante centralização horizontal dos filhos */
+  position: relative;
+}
+
 nav .logo {
   font-size: 2.2rem;
   font-weight: 900;
@@ -62,6 +69,19 @@ nav .logo {
   cursor: pointer;
   user-select: none;
   white-space: nowrap;
+  flex: 1 1 100%;           /* Faz a logo ocupar a linha toda */
+  text-align: center;       /* Centraliza o texto da logo */
+  margin: 0 auto;           /* Garante centralização */
+  z-index: 41;              /* Fica acima do menu hamburguer */
+}
+
+/* Pequeno ajuste para mobile: dar espaçamento abaixo */
+@media (max-width: 900px) {
+  nav .logo {
+    margin-bottom: 8px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
 }
 
 /* Hambúrguer */
@@ -77,6 +97,10 @@ nav .logo {
   outline: none;
   cursor: pointer;
   z-index: 40;
+  position: absolute;
+  right: 12px;   /* Ajuste para ficar no canto direito */
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 #nav-toggle span {
@@ -171,6 +195,7 @@ nav ul li:not(:last-child)::after {
   border-radius: 6px;
   top: 11px;
 }
+
 @media (max-width: 900px) {
   #nav-toggle {
     display: flex;
@@ -181,11 +206,11 @@ nav ul li:not(:last-child)::after {
     gap: 0;
     position: absolute;
     top: 65px;
-    left: 0;            /* Novo: menu começa da esquerda */
-    right: 0;           /* Novo: menu ocupa toda largura possível */
-    width: 95vw;        /* Ocupa quase toda a largura da tela */
-    max-width: 340px;   /* Limita no máximo */
-    margin: 0 auto;     /* Centraliza caso a tela seja maior */
+    left: 0;
+    right: 0;
+    width: 95vw;
+    max-width: 340px;
+    margin: 0 auto;
     background: linear-gradient(111deg,#1a1d23ef 90%,#24b9ff22 100%);
     border-radius: 13px;
     box-shadow: 0 7px 34px #24b9ff23, 0 1.5px 8px #0007;
@@ -203,7 +228,6 @@ nav ul li:not(:last-child)::after {
     transform: translateY(0) scale(1);
   }
 }
-
 
 /* ---- Hero Section ---- */
 .hero {
