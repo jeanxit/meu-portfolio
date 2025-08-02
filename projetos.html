@@ -28,11 +28,68 @@
 
 <section class="projetos">
   <h2>Projetos Selecionados</h2>
+  
+  <!-- TOP 3 Projetos (cards esticados e com imagem) -->
+  <div class="top3-grid">
+    <!-- 1º Lugar -->
+    <div class="projeto-card top1 big-card">
+      <div class="rank-badge">🥇</div>
+      <img class="top-img" src="exemplosvg.png" alt="Exemplo SVG Interativo" />
+      <div class="top-content">
+        <h3>Gerador de SVG Interativo <span class="top-label">TOP 1</span></h3>
+        <div class="stack-icons">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" title="Python" alt="Python" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" title="HTML5" alt="HTML5" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" title="JavaScript" alt="JavaScript" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" title="CSS3" alt="CSS3" />
+        </div>
+        <p>
+          Aplicativo desktop que processa arquivos SVG, gera versões interativas e dinâmicas para uso web, facilitando visualização e manipulação de dados gráficos.
+        </p>
+      </div>
+    </div>
+    <!-- 2º Lugar -->
+    <div class="projeto-card top2 big-card">
+      <div class="rank-badge">🥈</div>
+      <img class="top-img" src="exemplopm2.png" alt="Gerenciador PM2 via Web" />
+      <div class="top-content">
+        <h3>Gerenciador PM2 via Web <span class="top-label">TOP 2</span></h3>
+        <div class="stack-icons">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" title="Python" alt="Python" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" title="HTML5" alt="HTML5" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" title="JavaScript" alt="JavaScript" />
+          <img src="https://cdn.simpleicons.org/pm2/24B9FF" title="PM2" alt="PM2" />
+        </div>
+        <p>
+          Interface web para monitorar, subir, parar, reiniciar e deletar processos Node.js com PM2, tudo via backend Python e frontend moderno, sem precisar acessar o terminal.
+        </p>
+      </div>
+    </div>
+    <!-- 3º Lugar -->
+    <div class="projeto-card top3 big-card">
+      <div class="rank-badge">🥉</div>
+      <img class="top-img" src="exemplosupabase.png" alt="Administração Supabase" />
+      <div class="top-content">
+        <h3>Administração de Usuários e API com Supabase <span class="top-label">TOP 3</span></h3>
+        <div class="stack-icons">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" title="TypeScript" alt="TypeScript" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg" title="Supabase" alt="Supabase" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" title="PostgreSQL" alt="PostgreSQL" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" title="React" alt="React" />
+        </div>
+        <p>
+          Sistema de autenticação, gerenciamento de perfis, validação de e-mail e controle de origem de cadastro. APIs desenvolvidas em Supabase, consumidas por frontend próprio.
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Demais projetos -->
   <div class="projects-grid">
-
+    <!-- ... (os outros projetos continuam aqui, só removendo SVG, PM2 e Supabase daqui) ... -->
     <!-- Consulta de Chassi -->
     <div class="projeto-card">
-      <h3>Consulta de Chassi Integrada ao CRM</h3>
+      <h3>Consulta de Chassi Integrada ao Zoho CRM</h3>
       <div class="stack-icons">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" title="Python" alt="Python" />
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" title="HTML5" alt="HTML5" />
@@ -41,7 +98,7 @@
         <img src="https://cdn.simpleicons.org/zoho/ED1C24" title="Deluge (Zoho CRM)" alt="Deluge" />
       </div>
       <p>
-        Sistema de consulta de chassi que integra Python, HTML/CSS e JavaScript. Consome dados do CRM via API escrita em Deluge (Zoho), retornando informações em tempo real para o usuário.
+        Sistema de consulta de chassi que integra Python, HTML/CSS e JavaScript. Consome dados do Zoho CRM via API escrita em Deluge (Zoho), retornando informações em tempo real para o usuário.
       </p>
     </div>
 
@@ -61,7 +118,7 @@
 
     <!-- Totem de Peças -->
     <div class="projeto-card">
-      <h3>Totem de Peças Integrado ao CRM</h3>
+      <h3>Totem de Peças Integrado ao Zoho CRM</h3>
       <div class="stack-icons">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" title="Python" alt="Python" />
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" title="MySQL" alt="MySQL" />
@@ -70,21 +127,7 @@
         <img src="https://cdn.simpleicons.org/zoho/ED1C24" title="Zoho CRM" alt="Zoho CRM" />
       </div>
       <p>
-        Totem de autoatendimento para retirada de peças, com backend Python e MySQL, interface web (HTML/CSS/JS) e integração com CRM para gerenciamento dos pedidos.
-      </p>
-    </div>
-
-    <!-- Gerenciador de PM2 -->
-    <div class="projeto-card">
-      <h3>Gerenciador PM2 via Web</h3>
-      <div class="stack-icons">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" title="Python" alt="Python" />
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" title="HTML5" alt="HTML5" />
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" title="JavaScript" alt="JavaScript" />
-        <img src="https://cdn.simpleicons.org/pm2/24B9FF" title="PM2" alt="PM2" />
-      </div>
-      <p>
-        Interface web para monitorar, subir, parar, reiniciar e deletar processos Node.js com PM2, tudo via backend Python e frontend moderno, sem precisar acessar o terminal.
+        Totem de autoatendimento para retirada de peças, com backend Python e MySQL, interface web (HTML/CSS/JS) e integração com Zoho CRM para gerenciamento dos pedidos.
       </p>
     </div>
 
@@ -101,37 +144,9 @@
         Portal para cadastro, edição e gestão de treinamentos e arquivos PDF. Usuário pode inserir, editar ou excluir seus cursos, com upload e visualização de arquivos, feito em React/Next.js com Supabase.
       </p>
     </div>
-
-    <!-- Banco de Dados e Autenticação Supabase -->
-    <div class="projeto-card">
-      <h3>Administração de Usuários e API com Supabase</h3>
-      <div class="stack-icons">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" title="TypeScript" alt="TypeScript" />
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg" title="Supabase" alt="Supabase" />
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" title="PostgreSQL" alt="PostgreSQL" />
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" title="React" alt="React" />
-      </div>
-      <p>
-        Sistema de autenticação, gerenciamento de perfis, validação de e-mail e controle de origem de cadastro. APIs desenvolvidas em Supabase, consumidas por frontend próprio.
-      </p>
-    </div>
-
-    <!-- Gerador de SVG Interativo -->
-    <div class="projeto-card">
-      <h3>Gerador de SVG Interativo</h3>
-      <div class="stack-icons">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" title="Python" alt="Python" />
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" title="HTML5" alt="HTML5" />
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" title="JavaScript" alt="JavaScript" />
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" title="CSS3" alt="CSS3" />
-      </div>
-      <p>
-        Aplicativo desktop que processa arquivos SVG, gera versões interativas e dinâmicas para uso web, facilitando visualização e manipulação de dados gráficos.
-      </p>
-    </div>
-
   </div>
 </section>
+
 
     <footer>
       <p>© 2025 Jean Correa • Portfólio Profissional</p>
