@@ -6,7 +6,71 @@
   <title>Projetos | Jean Correa</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet" />
+  <style>
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  height: 220px;
+  margin: 0 auto 18px auto;
+  overflow: hidden;
+  border-radius: 1.2em;
+  box-shadow: 0 2px 22px #0001;
+  background: #191f2e; /* Fundo escuro (igual seu card) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.carousel-track {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  transition: transform 0.45s cubic-bezier(.6,.1,.34,.99);
+}
+.carousel img {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* Cobre todo o quadro sem distorcer */
+  background: #23293c;   /* Fundo fallback escuro */
+  display: block;
+  user-select: none;
+  pointer-events: none;
+  border-radius: 0;      /* Remove borda extra */
+  box-shadow: none;
+  transition: opacity 0.18s;
+}
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  background: rgba(0,0,0,0.18);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  font-size: 1.7em;
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition: background 0.18s, color 0.18s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 5px #0002;
+}
+.carousel-btn:hover {
+  background: rgba(36, 186, 255, 0.35); /* azul leve ao hover */
+  color: #24b9ff;
+}
+.carousel-btn.prev { left: 10px; }
+.carousel-btn.next { right: 10px; }
 
+@media (max-width: 600px) {
+  .carousel, .carousel img { height: 140px; max-width: 99vw; }
+}
+
+  </style>
 </head>
 <body>
   <div class="container">
@@ -29,12 +93,19 @@
 <section class="projetos">
   <h2>Projetos Selecionados</h2>
   
-  <!-- TOP 3 Projetos (cards esticados e com imagem) -->
+  <!-- TOP 3 Projetos (cards esticados e com carrossel) -->
   <div class="top3-grid">
     <!-- 1º Lugar -->
     <div class="projeto-card top1 big-card">
       <div class="rank-badge">🥇</div>
-      <img class="top-img" src="exemplosvg.png" alt="Exemplo SVG Interativo" />
+      <div class="carousel">
+        <div class="carousel-track">
+          <img src="public/images/svg1.png" alt="Exemplo 1 SVG Interativo">
+          <img src="public/images/svg2.png" alt="Exemplo 2 SVG Interativo">
+        </div>
+        <button class="carousel-btn prev">&#10094;</button>
+        <button class="carousel-btn next">&#10095;</button>
+      </div>
       <div class="top-content">
         <h3>Gerador de SVG Interativo <span class="top-label">TOP 1</span></h3>
         <div class="stack-icons">
@@ -51,7 +122,17 @@
     <!-- 2º Lugar -->
     <div class="projeto-card top2 big-card">
       <div class="rank-badge">🥈</div>
-      <img class="top-img" src="exemplopm2.png" alt="Gerenciador PM2 via Web" />
+      <div class="carousel">
+        <div class="carousel-track">
+          <img src="public/images/pm21.png" alt="Exemplo 1 PM2">
+          <img src="public/images/pm22.png" alt="Exemplo 2 PM2">
+          <img src="public/images/pm23.png" alt="Exemplo 3 PM2">
+          <img src="public/images/pm24.png" alt="Exemplo 4 PM2">
+          <img src="public/images/pm25.png" alt="Exemplo 5 PM2">
+        </div>
+        <button class="carousel-btn prev">&#10094;</button>
+        <button class="carousel-btn next">&#10095;</button>
+      </div>
       <div class="top-content">
         <h3>Gerenciador PM2 via Web <span class="top-label">TOP 2</span></h3>
         <div class="stack-icons">
@@ -68,7 +149,14 @@
     <!-- 3º Lugar -->
     <div class="projeto-card top3 big-card">
       <div class="rank-badge">🥉</div>
-      <img class="top-img" src="exemplosupabase.png" alt="Administração Supabase" />
+      <div class="carousel">
+        <div class="carousel-track">
+          <img src="public/images/supa1.png" alt="Exemplo 1 Supabase">
+          <img src="public/images/supa2.png" alt="Exemplo 2 Supabase">
+        </div>
+        <button class="carousel-btn prev">&#10094;</button>
+        <button class="carousel-btn next">&#10095;</button>
+      </div>
       <div class="top-content">
         <h3>Administração de Usuários e API com Supabase <span class="top-label">TOP 3</span></h3>
         <div class="stack-icons">
@@ -147,39 +235,44 @@
   </div>
 </section>
 
-
     <footer>
       <p>© 2025 Jean Correa • Portfólio Profissional</p>
     </footer>
   </div>
   <script>
-const toggle = document.getElementById('nav-toggle');
-const menu = document.getElementById('nav-menu');
-const overlay = document.getElementById('nav-overlay');
+document.querySelectorAll('.carousel').forEach(function(carousel) {
+  const track = carousel.querySelector('.carousel-track');
+  const imgs = track.querySelectorAll('img');
+  let idx = 0;
+  let intervalId;
 
-toggle.addEventListener('click', () => {
-  toggle.classList.toggle('active');
-  menu.classList.toggle('show');
-  overlay.classList.toggle('active');
+  function show(idxNew) {
+    idx = (idxNew + imgs.length) % imgs.length;
+    track.style.transform = `translateX(-${idx * 100}%)`;
+  }
+
+  function startAutoplay() {
+    if (intervalId) clearInterval(intervalId);
+    intervalId = setInterval(() => {
+      show(idx + 1);
+    }, 4000); // 2 segundos
+  }
+
+  // Agora a largura do track precisa ser correta!
+  track.style.width = (imgs.length * 100) + '%';
+  imgs.forEach(img => img.style.width = '100%');
+
+  carousel.querySelector('.carousel-btn.prev').onclick = () => { show(idx - 1); startAutoplay(); };
+  carousel.querySelector('.carousel-btn.next').onclick = () => { show(idx + 1); startAutoplay(); };
+
+  show(0);
+  startAutoplay();
+
+  // (Opcional) Pausa autoplay ao passar mouse
+  carousel.addEventListener('mouseenter', () => clearInterval(intervalId));
+  carousel.addEventListener('mouseleave', startAutoplay);
 });
 
-// Fecha menu se clicar no overlay
-overlay.addEventListener('click', () => {
-  toggle.classList.remove('active');
-  menu.classList.remove('show');
-  overlay.classList.remove('active');
-});
-
-// Fecha ao clicar em um link
-menu.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    toggle.classList.remove('active');
-    menu.classList.remove('show');
-    overlay.classList.remove('active');
-  });
-});
-
-</script>
-
+  </script>
 </body>
 </html>
